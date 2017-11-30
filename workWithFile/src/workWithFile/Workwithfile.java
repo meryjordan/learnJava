@@ -18,7 +18,7 @@ public class Workwithfile {
 		try{
 			BufferedReader inputFile = new BufferedReader(new FileReader("myFile.txt")); //load file
 			String strLine;
-			int i = 0;
+			int i = 0, countChar = 0;
 			List<String> oddLine = new ArrayList<>(); //create array list for oddLine
 			List<String> evenLine = new ArrayList<>();//create array list for evenLine
 			
@@ -28,9 +28,20 @@ public class Workwithfile {
 				i++;
 			}
 			//write even line from file
-			for (i = 0; i < evenLine.size(); i++) {
+			/*for (i = 0; i < evenLine.size(); i++) {
 				System.out.println(evenLine.get(i));
-			}
+			}*/
+			
+			//write number of occurrences of char A
+			String strList = evenLine.toString();
+			 for (i = 0; i < strList.length(); i++) {
+				 if (strList.charAt(i) == 'a') {
+					 countChar++;
+				 }
+			 }
+			System.out.println("The number of occurrences of a char A is - " + countChar);
+			
+			
 			inputFile.close();
 			
 		}catch(IOException e) {
